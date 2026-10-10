@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050714">
+<meta name="description" content="Contact Ahmed — Official Instagram">
+<title>CONTACT: AHMED</title>
+
+<style>
+:root {
+  --red: #ff174d;
+  --blue: #176bff;
+  --bg: #050714;
+  --white: #f7f8ff;
+  --muted: #a0aac8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  isolation: isolate;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  pointer-events: none;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      #ff174d25,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      #176bff30,
+      transparent 40%
+    ),
+    #050714;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#ffffff07 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff07 1px, transparent 1px);
+  background-size: 45px 45px;
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent
+  );
+}
+
+.orb {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: .35;
+  pointer-events: none;
+  animation: float 9s ease-in-out infinite alternate;
+}
+
+.orb-red {
+  background: var(--red);
+  top: -100px;
+  left: -100px;
+}
+
+.orb-blue {
+  background: var(--blue);
+  bottom: -100px;
+  right: -100px;
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  to {
+    transform: translate(55px, 45px) scale(1.15);
+  }
+}
+
+.card {
+  position: relative;
+  width: min(420px, 90vw);
+  padding: 42px 27px 30px;
+  text-align: center;
+  border: 1px solid #ffffff20;
+  border-radius: 28px;
+  background: rgba(10, 13, 31, .88);
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 25px 90px #0009,
+    0 0 40px #176bff12;
+  animation: enter 1s ease both;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--red),
+    transparent 38%,
+    transparent 65%,
+    var(--blue)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 27px;
+  padding: 9px 14px;
+  border: 1px solid #ffffff20;
+  border-radius: 30px;
+  background: #ffffff05;
+  color: #c3cce5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #44ffb0;
+  box-shadow: 0 0 12px #44ffb0;
+}
+
+.logo {
+  width: 108px;
+  height: 108px;
+  padding: 3px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--red),
+    #8d35ff,
+    var(--blue),
+    var(--red)
+  );
+  box-shadow: 0 0 35px #176bff30;
+  animation: rotate 9s linear infinite;
+}
+
+.logo-inner {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0b1022;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  animation: counter-rotate 9s linear infinite;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counter-rotate {
+  to { transform: rotate(-360deg); }
+}
+
+h1 {
+  font-size: clamp(23px, 6vw, 30px);
+  line-height: 1.4;
+  font-weight: 900;
+  letter-spacing: .4px;
+  background: linear-gradient(
+    100deg,
+    #ffffff,
+    #ff6686 45%,
+    #70a8ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 2;
+  letter-spacing: 2px;
+}
+
+.divider {
+  width: 62px;
+  height: 3px;
+  margin: 25px auto;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--red),
+    var(--blue)
+  );
+  box-shadow: 0 0 15px #176bff55;
+}
+
+.instagram {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 17px 14px;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+  border-radius: 13px;
+  background: linear-gradient(
+    105deg,
+    #f0184e,
+    #aa2bb4 52%,
+    #176bff
+  );
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 9px 28px #aa2bb433;
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    filter .3s ease;
+}
+
+.instagram::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 65%;
+  height: 100%;
+  transform: skewX(-25deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffffff65,
+    transparent
+  );
+  animation: shine 5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 65% { left: -130%; }
+  100% { left: 160%; }
+}
+
+.instagram:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px #176bff45;
+  filter: brightness(1.1);
+}
+
+.instagram:active {
+  transform: scale(.98);
+}
+
+.instagram svg {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+}
+
+.username {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.username strong {
+  color: #ffffff;
+}
+
+.footer {
+  margin-top: 32px;
+  padding-top: 19px;
+  border-top: 1px solid #ffffff12;
+  color: #77819f;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.footer span {
+  color: #dce3ff;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 35px 22px 25px;
+  }
+
+  .logo {
+    width: 95px;
+    height: 95px;
+  }
+
+  .logo-inner {
+    font-size: 28px;
+  }
+}
+
+@media (max-height: 600px) {
+  body {
+    overflow-y: auto;
+    padding: 20px 0;
+  }
+
+  .card {
+    padding-top: 25px;
+    padding-bottom: 22px;
+  }
+
+  .badge {
+    margin-bottom: 15px;
+  }
+
+  .logo {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 15px;
+  }
+
+  .divider {
+    margin: 17px auto;
+  }
+
+  .footer {
+    margin-top: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+  <div class="grid"></div>
+</div>
+
+<div class="orb orb-red"></div>
+<div class="orb orb-blue"></div>
+
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<main class="card">
+
+  <div class="badge">
+    <span class="badge-dot"></span>
+    OFFICIAL CONTACT
+  </div>
+
+  <div class="logo">
+    <div class="logo-inner">AH</div>
+  </div>
+
+  <h1>CONTACT: AHMED</h1>
+
+  <p class="subtitle">
+    WELCOME TO MY WORLD<br>
+    CONNECT WITH ME
+  </p>
+
+  <div class="divider"></div>
+
+  <a
+    class="instagram"
+    href="https://www.instagram.com/m.kgmh/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open Instagram m.kgmh"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="1"
+        fill="currentColor" stroke="none"/>
+    </svg>
+    <span>FOLLOW ON INSTAGRAM</span>
+  </a>
+
+  <p class="username">
+    INSTAGRAM: <strong>@m.kgmh</strong>
+  </p>
+
+  <footer class="footer">
+    PREMIUM DESIGN <span>✦</span> 2026
+  </footer>
+
+</main>
+
+<script>
+(() => {
+  const canvas = document.getElementById("stars");
+  const ctx = canvas.getContext("2d");
+
+  const STAR_COUNT = 1400;
+
+  let width = 0;
+  let height = 0;
+  let stars = [];
+  let dpr = 1;
+  let frame = 0;
+
+  function createStars() {
+    stars = [];
+
+    for (let i = 0; i < STAR_COUNT; i++) {
+      stars.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 1.2 + 0.2,
+        alpha: Math.random() * 0.75 + 0.15,
+        speed: Math.random() * 0.015 + 0.003,
+        phase: Math.random() * Math.PI * 2,
+        color: Math.random() > 0.5
+          ? "255,255,255"
+          : Math.random() > 0.5
+            ? "255,50,100"
+            : "70,140,255"
+      });
+    }
+  }
+
+  function resizeCanvas() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    createStars();
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, width, height);
+
+    frame++;
+
+    for (const star of stars) {
+      const flicker =
+        0.5 +
+        0.5 * Math.sin(
+          frame * star.speed + star.phase
+        );
+
+      ctx.beginPath();
+
+      ctx.arc(
+        star.x,
+        star.y,
+        star.radius,
+        0,
+        Math.PI * 2
+      );
+
+      ctx.fillStyle =
+        `rgba(${star.color},${star.alpha * flicker})`;
+
+      ctx.fill();
+    }
+
+    requestAnimationFrame(drawStars);
+  }
+
+  window.addEventListener(
+    "resize",
+    resizeCanvas,
+    { passive: true }
+  );
+
+  resizeCanvas();
+  drawStars();
+})();
+</script>
+
+</body>
+</html>
+```
+
